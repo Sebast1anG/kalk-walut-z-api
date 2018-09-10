@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Kalkulator Walut api z NBP online</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<h1>Kalkulator Walut</h1>
+	</header>
+
+	<div class="calculatorcontainer row">
+		<div class="currency">
+			<p>Podaj kwotę</p>
+				<input type="text" name="kwotadoprzeliczenia" class="form-control" id="kwotadoprzeliczenia" required="required" placeholder="podaj kwotę" autocomplete="off">
+			</div>
+		<div class="currency">
+			<p>Przelicz z:</p>
+			<select id="convert-from" class="btn btn-default fromcurrency">
+			 	<option value="pln">PLN - złoty</option>
+			 	<option value="EUR">EUR - Euro</option>
+			 	<option value="USD">USD - Dolar Amerykański</option>
+			 	<option value="GBP">GBP - Funt Szterling</option>
+			 	<option value="CHF">CHF - Frank szwajcarski</option>
+			 	<option value="HRK">HRK - Kuna (Chorwacja)</option>
+			 	<option value="THB">THB - Bat (Tajlandia)</option>
+			 	<option value="AUD">AUD - Dola Australijski</option>
+			 	<option value="HKD">HKD - Dolar Hongkongu</option>
+			 	<option value="CAD">CAD - Dolar Kanadyjski</option>
+			 	<option value="NZD">NZD - Dolar Nowozelandzki</option>
+			 	<option value="SGD">SGD - Dolar Singapurski</option>
+			 	<option value="HUF">HUF - Forint (Węgry)</option>
+			 	<option value="UAH">UAH - Hrywna(Ukraina)</option>
+			 	<option value="JPY">JPY - Jen (Japonia)</option>
+			 	<option value="CZK">CZK - Korona Czeska</option>
+			 	<option value="DKK">DKK - Korona Duńska</option>
+			 	<option value="ISK">ISK - Korona Islandzka</option>
+			 	<option value="NOK">NOK - Korona Norweska</option>
+			 	<option value="SEK">SEK - Korona Szwedzka</option>
+			 	<option value="RON">RON - Lej Rumuński</option>
+			 	<option value="BGN">BGN - Lew (Bułgaria)</option>
+			 	<option value="TRY">TRY - Lira Turecka</option>
+			 	<option value="ILS">ILS - Nowy Izraelski Szekel</option>
+			 	<option value="CLP">CLP - Peso Chilijskie</option>
+			 	<option value="PHP">PHP - Peso Filipińskie</option>
+			 	<option value="MXN">MXN - Peso Meksykańskie</option>
+			 	<option value="ZAR">ZAR - Rand (RPA)</option>
+			 	<option value="BRL">BRL - Real (Brazylia)</option>
+			 	<option value="MYR">MYR - Ringgit (Malezja)</option>
+			 	<option value="RUB">RUB - Rubel Rosyjski</option>
+			 	<option value="IDR">IDR - Rupia Indonezyjska</option>
+			 	<option value="INR">INR - Rupia Indyjska</option>
+			 	<option value="KRW">KRW - Won Południowokoreański</option>
+			 	<option value="CNY">CNY - Yuan renminbi (Chiny)</option>
+			 </select>
+		</div>
+		<div class="currency">
+		<p>Przelicz na:</p>
+			<select id="convert-to" class="btn btn-default"> 
+			 	<option value="EUR">EUR - Euro</option>
+			 	<option value="USD">USD - Dolar Amerykański</option>
+			 	<option value="GBP">GBP - Funt Szterling</option>
+			 	<option value="CHF">CHF - Frank szwajcarski</option>
+			 	<option value="HRK">HRK - Kuna (Chorwacja)</option>
+			 	<option value="THB">THB - Bat (Tajlandia)</option>
+			 	<option value="AUD">AUD - Dola Australijski</option>
+			 	<option value="HKD">HKD - Dolar Hongkongu</option>
+			 	<option value="CAD">CAD - Dolar Kanadyjski</option>
+			 	<option value="NZD">NZD - Dolar Nowozelandzki</option>
+			 	<option value="SGD">SGD - Dolar Singapurski</option>
+			 	<option value="HUF">HUF - Forint (Węgry)</option>
+			 	<option value="UAH">UAH - Hrywna(Ukraina)</option>
+			 	<option value="JPY">JPY - Jen (Japonia)</option>
+			 	<option value="CZK">CZK - Korona Czeska</option>
+			 	<option value="DKK">DKK - Korona Duńska</option>
+			 	<option value="ISK">ISK - Korona Islandzka</option>
+			 	<option value="NOK">NOK - Korona Norweska</option>
+			 	<option value="SEK">SEK - Korona Szwedzka</option>
+			 	<option value="RON">RON - Lej Rumuński</option>
+			 	<option value="BGN">BGN - Lew (Bułgaria)</option>
+			 	<option value="TRY">TRY - Lira Turecka</option>
+			 	<option value="ILS">ILS - Nowy Izraelski Szekel</option>
+			 	<option value="CLP">CLP - Peso Chilijskie</option>
+			 	<option value="PHP">PHP - Peso Filipińskie</option>
+			 	<option value="MXN">MXN - Peso Meksykańskie</option>
+			 	<option value="ZAR">ZAR - Rand (RPA)</option>
+			 	<option value="BRL">BRL - Real (Brazylia)</option>
+			 	<option value="MYR">MYR - Ringgit (Malezja)</option>
+			 	<option value="RUB">RUB - Rubel Rosyjski</option>
+			 	<option value="IDR">IDR - Rupia Indonezyjska</option>
+			 	<option value="INR">INR - Rupia Indyjska</option>
+			 	<option value="KRW">KRW - Won Południowokoreański</option>
+			 	<option value="CNY">CNY - Yuan renminbi (Chiny)</option>
+			 	<option value="pln">PLN - złoty</option>
+			</select>
+		</div>
+		<div class="currency">
+			<button id="calcvalue" class="btn btn-success">Przelicz</button>
+		</div>
+		<div class="currency">
+			<button id="calcvalue-claer" class="btn btn-danger">Wyczyść dane</button>
+		</div>
+	</div>
+	<div id="calcvalate-result">
+		
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="walutymin.js"></script>
+			
+</body>
+</html>
